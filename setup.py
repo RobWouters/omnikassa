@@ -15,7 +15,7 @@ requires = [
 
 setup(
     name='omnikassa',
-    version='0.2',
+    version='0.3',
     description='Python library for implementing Omnikassa',
     long_description=README + '\n\n' + CHANGES,
     classifiers=[
@@ -24,7 +24,7 @@ setup(
     author='Rob Wouters',
     author_email='rob@rob-wouters.nl',
     url='https://github.com/RobWouters/omnikassa',
-    download_url='https://github.com/RobWouters/omnikassa/tarball/0.1',
+    download_url='https://github.com/RobWouters/omnikassa/tarball/0.3',
     keywords='python omnikassa payment',
     packages=find_packages(),
     include_package_data=True,
