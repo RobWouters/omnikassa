@@ -24,10 +24,10 @@ setup(
     author='Rob Wouters',
     author_email='rob@rob-wouters.nl',
     url='https://github.com/RobWouters/omnikassa',
+    download_url='https://github.com/RobWouters/omnikassa/tarball/0.1',
     keywords='python omnikassa payment',
     packages=find_packages(),
     include_package_data=True,
     zip_safe=False,
     install_requires=requires,
 )
-print(find_packages())
