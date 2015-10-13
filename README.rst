@@ -33,7 +33,7 @@ Generating payment request
 
 ``data`` contains relevant info to create a form:
 
-.. code-block:: python
+.. code-block:: mako
 
     <form action="${url}" method="post" id="form">
         <input type="hidden" name="Seal" value="${seal}">
