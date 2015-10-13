@@ -1,10 +1,17 @@
-# Omnikassa
+=========
+Omnikassa
+=========
 
-[![Build Status](https://travis-ci.org/RobWouters/omnikassa.svg?branch=master)](https://travis-ci.org/RobWouters/omnikassa)
+.. image:: https://travis-ci.org/RobWouters/omnikassa.png?branch=master
+        :target: https://travis-ci.org/RobWouters/omnikassa
 
 Python library for implementing Omnikassa.
 
-# Generating payment request
+==========================
+Generating payment request
+==========================
+
+.. code-block:: python
 
     from omnikassa import Omnikassa
     from omnikassa.constants import Currency
@@ -24,7 +31,9 @@ Python library for implementing Omnikassa.
         'orderId': 123,  # optional
     })
 
-`data` contains relevant info to create a form:
+``data`` contains relevant info to create a form:
+
+.. code-block:: python
 
     <form action="${url}" method="post" id="form">
         <input type="hidden" name="Seal" value="${seal}">
@@ -35,13 +44,17 @@ Python library for implementing Omnikassa.
         </button>
     </form>
 
-# Handling return
+===============
+Handling return
+===============
+
+.. code-block:: python
 
     from omnikassa import Omnikassa
     from omnikassa.constants import Currency
 
     settings = {
-        'currencyCode': Currency.EURO,  # Default value, can be overriden 
+        'currencyCode': Currency.EURO,
         'automaticResponseUrl': 'https://example.com/callback',
         'normalReturnUrl': 'https://example.com/omnikassa',
         'merchantId': '0123456789',
