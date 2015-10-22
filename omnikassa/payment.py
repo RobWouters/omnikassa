@@ -1,10 +1,14 @@
+import time
+
+from .constants import Settings
+
 from .exceptions import OmnikassaException
 from .helpers import data_to_str
 
 
 class Payment:
     def __init__(self, settings):
-        self.settings = self._validate_settings(settings)
+        self.settings = self._validate_settings(settings.copy())
 
     def _validate_settings(self, settings):
         if not settings.get('currencyCode'):
@@ -20,6 +24,12 @@ class Payment:
 
         if not settings.get('normalReturnUrl'):
             raise OmnikassaException('normalReturnUrl is required.')
+
+        if settings['merchantId'] == Settings.Test.MERCHANT_ID:
+            # Prefix reference in test with timestamp to prevent collisions.
+            settings['transactionReference'] = '{}{}'.format(
+                time.time(), settings['transactionReference']
+            ).replace('.', '')
 
         return settings
 
